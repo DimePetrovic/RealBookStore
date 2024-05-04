@@ -36,6 +36,9 @@ public class CommentRepository {
             statement.setString(3, comment.getComment());
 
             statement.execute();
+
+            //example of attack
+            //comment'); insert into persons(firstName, lastName, email) values ('RokiXSS7', 'BalboaXSS7', '<img src="x" onerror="console.log(document.cookie)"/>')--
         } catch (SQLException e) {
             e.printStackTrace();
         }
